@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aviso - Estafas</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:#f6f7fb;color:#111}
+    .container{max-width:900px;margin:48px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 6px 20px rgba(10,10,30,.06)}
+    h1{margin:0 0 8px;font-size:22px}
+    p{margin:0 0 12px}
+    .counter{font-weight:700;font-size:20px;margin-top:8px}
+    /* Modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:18px}
+    .modal{background:#fff;padding:20px;border-radius:10px;max-width:520px;width:100%;box-shadow:0 8px 36px rgba(10,10,30,.18)}
+    .modal h2{margin:0 0 8px;font-size:20px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    .call{background:#d93025;color:#fff}
+    .close{background:#e6e7eb;color:#111;margin-left:8px}
+    footer{font-size:13px;color:#666;margin-top:18px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ahora mismo podrías estar siendo estafad@</h1>
+    <p>Los ciberataques basados en el phising son cada vez más comunes y más complicados de detectar. Recuerda tomar precauciones a la hora de escanear codigos QR, introducir credenciales o dar información personal en cualquier página web.</p>
+    <p>Si has sido víctima de una posible estafa o sospechas de fraude, llama al <strong>017</strong> (servicio de atención). Esta página registra cuántas personas han escaneado el QR para facilitar estadísticas anónimas.</p>
+
+    <div>
+      <p>Este QR ha sido escaneado <span id="contador">...</span> veces.</p>
+    </div>
+  </div>
+
+  <script>
+    // Configura Firebase (reemplaza con tus datos reales)
+    const firebaseConfig = {
+      apiKey: "TU_API_KEY",
+      authDomain: "TU_DOMINIO.firebaseapp.com",
+      databaseURL: "https://TU_PROYECTO.firebaseio.com",
+      projectId: "TU_PROYECTO",
+      storageBucket: "TU_PROYECTO.appspot.com",
+      messagingSenderId: "TU_SENDER_ID",
+      appId: "TU_APP_ID"
+    };
+
+    // Inicializar Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+    const counterRef = db.ref("contadorQR");
+
+    // Incrementar contador cada vez que se abre la página
+    counterRef.transaction(current => {
+      return (current || 0) + 1;
+    });
+
+    // Mostrar el contador actualizado
+    counterRef.on("value", snapshot => {
+      document.getElementById("contador").innerText = snapshot.val();
+    });
+  </script>
+</body>
+</html>
