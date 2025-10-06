@@ -1,32 +1,120 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aviso - Estafas</title>
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:#f6f7fb;color:#111}
-    .container{max-width:900px;margin:48px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 6px 20px rgba(10,10,30,.06)}
-    h1{margin:0 0 8px;font-size:22px}
-    p{margin:0 0 12px}
-    .counter{font-weight:700;font-size:20px;margin-top:8px}
-    /* Modal */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:18px}
-    .modal{background:#fff;padding:20px;border-radius:10px;max-width:520px;width:100%;box-shadow:0 8px 36px rgba(10,10,30,.18)}
-    .modal h2{margin:0 0 8px;font-size:20px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
-    .call{background:#d93025;color:#fff}
-    .close{background:#e6e7eb;color:#111;margin-left:8px}
-    footer{font-size:13px;color:#666;margin-top:18px}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>¡Alerta Estafas!</title>
+<style>
+body {
+font-family: 'Segoe UI', Roboto, sans-serif;
+margin: 0;
+background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+color: #111;
+}
+
+.container {
+max-width: 800px;
+margin: 60px auto;
+padding: 32px;
+background: #fff;
+border-radius: 16px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+text-align: center;
+}
+
+h1 {
+font-size: 28px;
+color: #d93025;
+margin-bottom: 16px;
+}
+
+p {
+font-size: 18px;
+margin-bottom: 18px;
+line-height: 1.5;
+}
+
+.alert {
+font-size: 20px;
+background: #fff3cd;
+color: #856404;
+padding: 12px;
+border-radius: 8px;
+margin-bottom: 24px;
+}
+
+.emoji {
+font-size: 40px;
+margin-bottom: 16px;
+}
+
+.info-box {
+background: #e6f4ea;
+color: #0b6b43;
+padding: 20px;
+border-radius: 12px;
+margin-top: 24px;
+font-size: 18px;
+line-height: 1.6;
+}
+
+.info-box strong {
+font-size: 22px;
+color: #0a4f2b;
+}
+
+.contact-link {
+color: #0b6b43;
+font-weight: bold;
+text-decoration: none;
+}
+
+.contact-link:hover {
+text-decoration: underline;
+}
+
+footer {
+font-size: 14px;
+color: #666;
+margin-top: 36px;
+}
+
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.05); }
+100% { transform: scale(1); }
+}
+
+.pulse {
+animation: pulse 2s infinite;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Ahora mismo podrías estar siendo estafad@</h1>
-    <p>Los ciberataques basados en el phising son cada vez más comunes y más complicados de detectar. Recuerda tomar precauciones a la hora de escanear codigos QR, introducir credenciales o dar información personal en cualquier página web.</p>
-    <p>Si has sido víctima de una posible estafa o sospechas de fraude, llama al <strong>017</strong> (servicio de atención).</p>
+<div class="container">
+<div class="emoji pulse">🚨</div>
+<h1>¡Cuidado! Podrías estar siendo estafad@</h1>
 
-  </script>
+<div class="alert">⚠️ No compartas tus datos personales ni confíes en enlaces sospechosos</div>
+
+<p>Los fraudes por internet como el phishing están a la orden del día. Ten cuidado con mensajes que piden tus contraseñas, datos bancarios o te llevan a páginas dudosas tras escanear un QR.</p>
+
+<p>¿Sospechas de una estafa? No te arriesgues:</p>
+
+<div class="info-box">
+☎️ <strong>Llama gratis al 017</strong><br>
+(Atención personalizada del INCIBE)<br><br>
+
+💬 También puedes contactar por WhatsApp: <br>
+<a class="contact-link" href="https://wa.me/34601217817" target="_blank">https://wa.me/34601217817</a><br><br>
+
+🌐 Visita la web oficial: <br>
+<a class="contact-link" href="https://www.incibe.es" target="_blank">www.incibe.es</a>
+</div>
+
+<footer>
+Servicio gratuito del Instituto Nacional de Ciberseguridad (INCIBE)
+</footer>
+</div>
 </body>
 </html>
-
